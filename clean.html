@@ -139,8 +139,7 @@
 
         // Booking button handler
         function bookService(type) {
-            console.log(`Booking ${type} service...`);
-            alert(`Booking ${type} service... Redirecting to calendar! (Demo)`);
+            window.open('https://wa.me/+2347039306239?text=Hi%20TuchUp,%20I%20want%20to%20book%20a%20' + encodeURIComponent(type) + '%20service', '_blank');
         }
 
         // Contact form submission
