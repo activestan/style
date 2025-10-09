@@ -1,158 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Get professional barbing and laundry services at our website. Book your appointment today">
-  <meta name="keywords" content="barbing, laundry, services, professional, male, clothes">
-  <title>TuchUp - Haircuts & Laundry Services</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Poppins', sans-serif; }
-    .smooth-scroll { scroll-behavior: smooth; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuchUp - Haircuts & Laundry Services</title>
+    <meta name="description" content="Tuchup: Premium haircuts and eco-friendly laundry services.">
+    <meta name="keywords" content="haircuts, laundry, TuchUp, booking">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .fade-in { animation: fadeIn 1s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .alert { border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+        .alert-success { background-color: #d4edda; color: #155724; }
+        .alert-error { background-color: #f8d7da; color: #721c24; }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-900 smooth-scroll">
+<body class="bg-gray-50">
 
-  <!-- Navbar -->
-  <nav class="bg-white shadow-lg fixed w-full z-10">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold text-indigo-600">TuchUp</a>
-      <div class="hidden md:flex space-x-6">
-        <a href="#home" class="hover:text-indigo-600 transition">Home</a>
-        <a href="#services" class="hover:text-indigo-600 transition">Services</a>
-        <a href="#about" class="hover:text-indigo-600 transition">About</a>
-        <a href="#contact" class="hover:text-indigo-600 transition">Contact</a>
-      </div>
-      <button id="menu-toggle" class="md:hidden focus:outline-none">
-        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-      </button>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-      <a href="#home" class="block px-4 py-2 hover:bg-indigo-100">Home</a>
-      <a href="#services" class="block px-4 py-2 hover:bg-indigo-100">Services</a>
-      <a href="#about" class="block px-4 py-2 hover:bg-indigo-100">About</a>
-      <a href="#contact" class="block px-4 py-2 hover:bg-indigo-100">Contact</a>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section id="home" class="bg-indigo-600 text-white h-screen flex items-center justify-center">
-    <div class="container mx-auto px-4 text-center">
-      <h1 class="text-5xl font-bold mb-4 animate-fade-in">Where Style meets Cleanliness</h1>
-      <p class="text-xl mb-8">One-stop shop for premium haircuts and efficient laundry services.<br/>Experience premium grooming and professional laundry services<br/> under one roof. Your one-stop destination for looking fresh and feeling</p>
-      <a href="#services" class="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Explore Services</a>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Haircut Service -->
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
-          <img src="/image/black-men-haircuts-guide-bald-short-curly-beard.webp" alt="Haircut" class="w-full h-48 object-cover rounded-t-lg mb-4">
-          <h3 class="text-2xl font-semibold mb-2">Professional Haircuts</h3>
-          <p class="mb-4">Expert stylists for modern cuts, fades, and styles. Walk-ins welcome!</p>
-          <p class="font-bold text-indigo-600">Starting at ₦3000</p>
-        </div>
-        <!-- Laundry Service -->
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
-          <img src="/image/download.jpg" alt="Laundry" class="w-full h-48 object-cover rounded-t-lg mb-4">
-          <h3 class="text-2xl font-semibold mb-2">Laundry Services</h3>
-          <p class="mb-4">Fast, reliable wash, dry, and fold. Eco-friendly detergents used. Home Deliveries and Pickups inclusive</p>
-          <p class="font-bold text-indigo-600">With as low as ₦600</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-20 bg-indigo-50">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center mb-12">About Us</h2>
-      <div class="flex flex-col md:flex-row items-center">
-        <img src="/image/landing.jpg.jpg" alt="About Us" class="w-full md:w-1/2 h-64 object-cover rounded-lg mb-8 md:mb-0 md:mr-8">
-        <div>
-          <p class="text-lg mb-4">TuchUp is a unique blend of grooming and cleaning services, designed for the modern lifestyle. Founded in 2025, we aim to save you time by combining two essential services under one roof.</p>
-          <p class="text-lg">Our team of professionals ensures top-quality results every time. Visit us today!</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <!-- Contact Section -->
-<section id="contact" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-12 fade-in">Get in Touch</h2>
-        <div id="form-message" class="hidden text-center"></div>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="fade-in">
-                <h3 class="text-2xl font-semibold mb-4">Visit Us</h3>
-                <p class="text-gray-600 mb-2">Second Floor, Epicenter, Karumo Distric, Abuja.</p>
-                <p class="text-gray-600 mb-2">Open Mon-Sat: 8AM-10PM</p>
-                <p class="text-gray-600 mb-4">Phone: +2347039306239 </p>
-                <a href="odimegwustanley2004@gmail.com" class="text-blue-600 hover:underline block mb-4">hello@tuchup.com</a>
-                <a href="https://wa.me/+2347039306239" target="_blank" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition inline-block">Chat on WhatsApp</a>
+    <!-- Navbar with Dropdown -->
+    <nav class="bg-blue-600 text-white py-4 fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">TuchUp</h1>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
-            <form id="contactForm" class="space-y-4 fade-in">
-                <input type="text" name="user_name" placeholder="Your Name" class="w-full p-3 border rounded-lg" required>
-                <input type="email" name="user_email" placeholder="Your Email" class="w-full p-3 border rounded-lg" required>
-                <textarea name="message" placeholder="Your Message" rows="4" class="w-full p-3 border rounded-lg" required></textarea>
-                <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition w-full md:w-auto">Send Message</button>
-            </form>
+            <ul id="menu" class="hidden md:flex space-x-6">
+                <li><a href="#home" class="hover:underline">Home</a></li>
+                <li><a href="#services" class="hover:underline">Services</a></li>
+                <li><a href="#about" class="hover:underline">About</a></li>
+                <li><a href="#contact" class="hover:underline">Contact</a></li>
+            </ul>
         </div>
-    </div>
-</section>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-700">
+            <ul class="flex flex-col items-center space-y-4 py-4">
+                <li><a href="#home" class="hover:underline">Home</a></li>
+                <li><a href="#services" class="hover:underline">Services</a></li>
+                <li><a href="#about" class="hover:underline">About</a></li>
+                <li><a href="#contact" class="hover:underline">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <!-- Footer -->
-  <footer class="bg-indigo-600 text-white py-6">
-    <div class="container mx-auto px-4 text-center">
-      <p>&copy; 2025 TuchUp. All rights reserved.</p>
-      <div class="mt-4 space-x-4">
-        <a href="#" class="hover:text-gray-300">Privacy Policy</a>
-        <a href="#" class="hover:text-gray-300">Terms of Service</a>
-      </div>
-    </div>
-  </footer>
+    <!-- Hero Section -->
+    <header id="home" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 mt-16">
+        <div class="container mx-auto px-4 text-center fade-in">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">TuchUp</h1>
+            <p class="text-xl md:text-2xl mb-8">Fresh Cuts & Clean Laundry – Your One-Stop Glow-Up</p>
+            <div class="space-x-4">
+                <a href="#services" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Book Now</a>
+                <a href="#contact" class="border-2 border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition">Learn More</a>
+            </div>
+        </div>
+    </header>
 
- <!--  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-   
-    emailjs.init("k6eb-WPX6M951vDp-");
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 fade-in">Our Services</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg text-center fade-in">
+                    <img src="./image/black-men-haircuts-guide-bald-short-curly-beard.webp" alt="Haircut Service" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-2xl font-semibold mb-4">Premium Haircuts</h3>
+                    <p class="text-gray-600 mb-6">From trendy fades to classic styles, our expert stylists use eco-friendly products for cuts that last. Starting at $25.</p>
+                    <ul class="text-left mb-6 space-y-2">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Wash & Style Included</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Kids Cuts $15</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Walk-Ins Welcome</li>
+                    </ul>
+                    <button onclick="bookService('haircut')" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Book Haircut</button>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg text-center fade-in">
+                    <img src="./image/download.jpg" alt="Laundry Service" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-2xl font-semibold mb-4">Eco Laundry</h3>
+                    <p class="text-gray-600 mb-6">Quick wash, dry, and fold with plant-based detergents. Pickup & delivery available. $1.50/lb.</p>
+                    <ul class="text-left mb-6 space-y-2">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Free Pickup</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Same-Day Service</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Stain Removal Guarantee</li>
+                    </ul>
+                    <button onclick="bookService('laundry')" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Schedule Laundry</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function bookService(type) {
-        alert(`Booking ${type} service... Redirecting to calendar! (Demo)`);
-    }
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8 fade-in">About TuchUp</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-12 fade-in">We're more than just hair and laundry—we're about making your routine effortless and stylish. Founded in 2023, TuchUp combines salon expertise with sustainable cleaning to keep you looking and feeling fresh. Visit our downtown spot or let us come to you!</p>
+            <img src="./image/landing.jpg.jpg" alt="TuchUp Team" class="w-full max-w-4xl mx-auto rounded-lg fade-in">
+        </div>
+    </section>
 
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = {
-            user_name: this.querySelector('input[type="text"]').value,
-            user_email: this.querySelector('input[type="email"]').value,
-            message: this.querySelector('textarea').value
-        };
-        emailjs.send('service_0qystys', 'template_57jcmd8', formData)
-            .then(() => {
-                alert('Message sent! Thanks for reaching out to StyleWash.');
-                this.reset();
-            }, (error) => {
-                alert('Oops! Something went wrong: ' + error.text);
-            });
-    });
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 fade-in">Get in Touch</h2>
+            <div id="form-message" class="hidden text-center"></div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">Visit Us</h3>
+                    <p class="text-gray-600 mb-2">Second Floor, Epicenter, Karumo Distric, Abuja.</p>
+                    <p class="text-gray-600 mb-2">Open Mon-Sat: 9AM-7PM</p>
+                    <p class="text-gray-600 mb-4">Phone: +2347039306239</p>
+                    <a href="mailto:odimegwustanley2004@gmail.com" class="text-blue-600 hover:underline block mb-4">hello@TuchUp.com</a>
+                    <a href="https://wa.me/+2347039306239" target="_blank" class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition inline-block">Chat on WhatsApp</a>
+                </div>
+                <form id="contactForm" class="space-y-4 fade-in">
+                    <input type="text" name="user_name" placeholder="Your Name" class="w-full p-3 border rounded-lg" required>
+                    <input type="email" name="user_email" placeholder="Your Email" class="w-full p-3 border rounded-lg" required>
+                    <textarea name="message" placeholder="Your Message" rows="4" class="w-full p-3 border rounded-lg" required></textarea>
+                    <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition w-full md:w-auto">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <p>&copy; 2025 TuchUp. All rights reserved. | Fresh Cuts, Clean Vibes.</p>
+    </footer>
+
+    <!-- EmailJS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS
+        emailjs.init({
+            publicKey: 'k6eb-WPX6M951vDp-' // Replace with your EmailJS Public Key
         });
-    }); -->
 
-  </script>
+        // Booking button handler
+        function bookService(type) {
+            console.log(`Booking ${type} service...`);
+            alert(`Booking ${type} service... Redirecting to calendar! (Demo)`);
+        }
 
+        // Contact form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const messageDiv = document.getElementById('form-message');
+
+            if (!form) {
+                console.error('Form with ID "contactForm" not found');
+                return;
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                messageDiv.classList.remove('hidden', 'alert-success', 'alert-error');
+                messageDiv.textContent = 'Sending...';
+
+                const formData = {
+                    user_name: this.querySelector('input[name="user_name"]').value,
+                    user_email: this.querySelector('input[name="user_email"]').value,
+                    message: this.querySelector('textarea[name="message"]').value
+                };
+
+                console.log('Form data:', formData);
+
+                emailjs.send(
+                    'service_0qystys', // Replace with your Service ID
+                    'template_57jcmd8', // Replace with your Template ID
+                    formData
+                )
+                .then((response) => {
+                    console.log('Email sent successfully:', response.status, response.text);
+                    messageDiv.classList.add('alert-success');
+                    messageDiv.textContent = 'Message sent! Thanks for reaching out to TuchUp.';
+                    form.reset();
+                }, (error) => {
+                    console.error('EmailJS error:', error);
+                    messageDiv.classList.add('alert-error');
+                    messageDiv.textContent = 'Oops! Failed to send: ' + error.text;
+                });
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Toggle mobile menu
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
