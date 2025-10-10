@@ -222,6 +222,13 @@
             const mobileMenu = document.getElementById('mobile-menu');
             menuToggle.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
+                //new here
+                const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+    });
+});
             });
         });
     </script>
