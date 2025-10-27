@@ -60,36 +60,71 @@
     </style>
 </head>
 <body class="bg-gray-50">
-
-    <!-- Navbar with Dropdown -->
-    <nav class="bg-blue-600 text-white py-4 fixed w-full top-0 z-50">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold">TuchUp</h1>
-            <div class="md:hidden">
-                <button id="menu-toggle" class="focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+    <!-- Navbar -->
+  <nav class="bg-blue-600 text-white fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="#" class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+              <span class="text-white font-bold text-lg">T</span>
             </div>
-            <ul id="menu" class="hidden md:flex space-x-6">
-                <li><a href="#home" class="hover:underline">Home</a></li>
-                <li><a href="#services" class="hover:underline">Services</a></li>
-                <li><a href="#about" class="hover:underline">About</a></li>
-                <li><a href="#contact" class="hover:underline">Contact</a></li>
-            </ul>
+            <span class="text-xl font-bold text-gray-900">TuchUp</span>
+          </a>
         </div>
-        <!-- Mobile Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-blue-700">
-            <ul class="flex flex-col items-center space-y-4 py-4">
-                <li><a href="#home" class="hover:underline mobile-menu-link">Home</a></li>
-                <li><a href="#services" class="hover:underline mobile-menu-link">Services</a></li>
-                <li><a href="#about" class="hover:underline mobile-menu-link">About</a></li>
-                <li><a href="#contact" class="hover:underline mobile-menu-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#home" class="text-white hover:underline transition font-medium">Home</a>
+          <a href="#services" class="text-white hover:underline transition font-medium">Services</a>
+          <a href="#about" class="text-white hover:underline transition font-medium">About</a>
+          <a href="#contact" class="text-white hover:underline transition font-medium">Contact</a>
+        </div>
+
+
+        <!-- Mobile Hamburger Button -->
+        <div class="md:hidden flex items-center">
+          <button
+            id="menu-btn"
+            class="text-white  focus:outline-none transition"
+            aria-label="Toggle menu"
+          >
+            <!-- Menu Icon -->
+            <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <!-- Close Icon -->
+            <svg id="close-icon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+      <div class="px-4 pt-2 pb-3 space-y-1">
+        <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-md transition font-medium">
+          Home
+        </a>
+        <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-md transition font-medium">
+          Services
+        </a>
+        <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-md transition font-medium">
+          About
+        </a>
+        <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-md transition font-medium">
+          Contact
+        </a>
+        
+      </div>
+    </div>
+  </nav>
+
+    
     <!-- Hero Section -->
     <header id="home" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 mt-16">
         <div class="container mx-auto px-4 text-center fade-in">
@@ -185,11 +220,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('contactForm');
             const messageDiv = document.getElementById('form-message');
-            const menuToggle = document.getElementById('menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
-
-            // Debug: Log mobile menu links
+              // Debug: Log mobile menu links
             console.log('Mobile menu links found:', mobileMenuLinks.length);
 
             // Form submission
@@ -222,28 +253,45 @@
             } else {
                 console.error('Form with ID "contactForm" not found');
             }
-
-            // Toggle mobile menu
-            if (menuToggle && mobileMenu) {
-                menuToggle.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-
-            // Close mobile menu and smooth scroll on link click
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                        mobileMenu.classList.add('hidden');
-                        console.log(`Navigated to ${} and closed menu`);
-                    }
-                });
-            });
         });
     </script>
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+
+      let isOpen = false;
+
+      menuBtn.addEventListener('click', () => {
+        isOpen = !isOpen;
+
+        // Toggle mobile menu visibility
+        if (isOpen) {
+          mobileMenu.classList.remove('hidden');
+          mobileMenu.classList.add('block');
+          closeIcon.classList.remove('hidden');
+          menuIcon.classList.add('hidden');
+        } else {
+          mobileMenu.classList.remove('block');
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        }
+      });
+
+      // Close menu when clicking a link (mobile)
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          isOpen = false;
+          mobileMenu.classList.remove('block');
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
